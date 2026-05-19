@@ -1,6 +1,49 @@
 import pandas as pd
 from pathlib import Path
 
+"""
+Adjunto encontras los archivos de publicaciones de miembros de la UAM para el periodo 2015 - 2024, en donde cada renglón corresponde a una publicación. Como te había comentado la primer tarea consiste en clasificar cada publicación alguna de las siguientes categorias de colaboración:
+Internacional - Hay coautores de instituiciones extranjeras.
+Nacional - Hay coautores de instituciones nacionales diferentes a la UAM.
+UAM - Todo los coautores son de la UAM (pueden ser de diferentes Unidades).
+Personal - Artículos de un sólo autor
+
+La primer tarea será realizar un script en python que realice la clasificación de la siguente manera:
+
+- Lee el csv y los guarda en un DF.
+- Las columnas útiles para la clasificación son: "Number of authors", "Country / Regions" (los valores están separados por '|'), "Number of countries / Regions", "Institutions" (los valores están separados por '|')
+- Agrega al DF una columna colaboracion y ahí se le asigna a cada reglón uno los 3 tipos de colaboración.
+- Agrega al DF una columna Number of national institutions. Debes contar cuantas instituciones nacionales diferentes hay en la columna institutons.
+"""
+
+def contar_instituciones_nacionales(instituciones):
+  
+    instituciones_list = [inst.strip() for inst in instituciones.split('|')]
+    instituciones_nacionales = set()
+
+    for inst in instituciones_list:
+        if '' in inst:
+            instituciones_nacionales.add(inst)
+
+    return len(instituciones_nacionales)
+
+
+
+
+def clasificar_nacionalidades(info_publicacion):
+
+    if info_publicacion['Number of authors'] == 1:
+        return "Personal", 1
+    
+    elif info_publicacion['Number of countries / Regions'] == 1 and 'Mexico' in info_publicacion['Country / Regions']:
+        return "Nacional", contar_instituciones_nacionales(info_publicacion['Institutions'])
+
+    elif info_publicacion['Number of countries / Regions'] > 1:
+        return "Internacional", contar_instituciones_nacionales(info_publicacion['Institutions'])
+
+    return 
+
+
 
 def procesar_csv(csv_path):
     try:
@@ -14,8 +57,13 @@ def procesar_csv(csv_path):
 
     try:
         for idx, row in df.iterrows():
-            no_autores = row['Number of authors']
+            clasificar_nacionalidades = clasificar_nacionalidades(row)
+            df.at[idx, 'Colaboracion'] = clasificar_nacionalidades[0]
+            df.at[idx, 'Number of national institutions'] = clasificar_nacionalidades[1]
 
     except Exception as e:
         print(f"Error al procesar el archivo CSV: {e}")
         return
+    
+    print("Archivo procesado exitosamente.")
+    return df
