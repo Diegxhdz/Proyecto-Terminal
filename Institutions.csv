@@ -1,0 +1,180 @@
+﻿Data set,Institutions
+Entity,"Mexico"
+Year range,1996 to 2024
+Subject classification,"ASJC"
+Filtered by,"not filtered"
+Types of publications included,all publication types
+Self-citations,included
+
+Data source,Scopus
+Date last updated,13 May 2026
+Date exported,18 May 2026
+
+Institution ID,Institution,Sector,Country/Region,Scholarly Output,Scholarly Output (growth %),Citations,Authors,Authors (growth %),Citations per Publication,Field-Weighted Citation Impact
+505023,"Universidad Nacional Autónoma de México",academic,"Mexico",136634,428.4,3236874,61863,392.1,23.7,0.92
+505011,"Instituto Politécnico Nacional",academic,"Mexico",47500,1319.6,804490,24849,1021.7,16.9,0.74
+505002,"Centro de Investigacion y de Estudios Avanzados del Instituto Politécnico Nacional",government,"Mexico",40634,305.7,1034293,15594,188.3,25.5,1.05
+505017,"Universidad Autónoma Metropolitana",academic,"Mexico",26009,366.6,562791,12096,312.6,21.6,0.97
+505012,"Instituto Tecnologico de Estudios Superiores de Monterrey",academic,"Mexico",22963,4308.5,469848,11829,2990.8,20.5,1.13
+704696,"Consejo Nacional de Ciencia y Tecnologia Mexico",government,"Mexico",20680,5091.5,420579,7792,3881.3,20.3,0.97
+505006,"Instituto Mexicano del Seguro Social",government,"Mexico",20138,293.6,385736,20058,213.5,19.2,0.93
+505019,"Universidad de Guadalajara",academic,"Mexico",19279,1938.6,289635,11228,1812.4,15.0,0.73
+505013,"Universidad Autonoma de Nuevo Leon",academic,"Mexico",16864,1369.7,299574,10730,1273.3,17.8,0.79
+505001,"Benemerita Universidad Autonoma de Puebla",academic,"Mexico",15670,940.2,339972,7534,1016.1,21.7,1.04
+505014,"Universidad Autonoma de San Luis Potosi",academic,"Mexico",12004,1637.0,293714,5581,1874.1,24.5,1.11
+505020,"Universidad de Guanajuato",academic,"Mexico",11954,1075.7,204150,5670,684.3,17.1,0.76
+505022,"Universidad Michoacana de San Nicolas de Hidalgo",academic,"Mexico",10532,3781.0,189810,4910,2687.9,18.0,0.77
+505009,"Instituto Nacional de Ciencias Medicas y Nutricion Salvador Zubiran",government,"Mexico",10105,317.5,362262,6469,196.8,35.8,1.72
+505007,"Instituto Nacional de Astrofisica Optica y Electronica",government,"Mexico",9770,290.8,161046,2806,226.4,16.5,0.83
+505056,"Universidad Veracruzana",academic,"Mexico",9576,2965.5,130168,5773,2487.8,13.6,0.64
+505046,"Universidad Autonoma de Baja California",academic,"Mexico",9233,1602.2,137720,5449,1689.3,14.9,0.72
+505016,"Universidad Autonoma del Estado de Morelos",academic,"Mexico",8825,1650.0,158025,4033,1345.7,17.9,0.70
+505051,"Universidad Autonoma del Estado de Mexico",academic,"Mexico",8682,5184.6,123985,5477,4670.0,14.3,0.65
+505024,"Centro de Investigacion Cientifica y de Educacion Superior de Ensenada",government,"Mexico",7967,330.2,147821,2763,328.6,18.6,0.84
+719128,"Tecnológico Nacional de México, Mexico City",academic,"Mexico",7597,-,88702,6111,-,11.7,0.79
+505010,"Instituto Nacional de Salud Publica",government,"Mexico",7441,595.4,515179,2720,310.2,69.2,3.54
+505021,"Universidad de Sonora",academic,"Mexico",7137,855.2,132910,3402,828.9,18.6,0.84
+505048,"Universidad Autonoma Queretaro",academic,"Mexico",6444,3182.4,123816,3738,2920.0,19.2,0.86
+505003,"Colegio de Postgraduados",academic,"Mexico",6120,376.7,97502,3869,501.9,15.9,0.53
+505050,"Universidad Autonoma del Estado de Hidalgo",academic,"Mexico",6021,57200.0,117969,3169,73700.0,19.6,0.78
+505015,"Universidad Autonoma de Yucatan",academic,"Mexico",5958,1957.1,101799,3314,1457.9,17.1,0.78
+505034,"Instituto de Ecologia, A.C.",government,"Mexico",5553,1081.3,131383,1649,773.7,23.7,0.93
+505038,"Instituto Nacional de Investigaciones Forestales, Agricolas y Pecuarias",government,"Mexico",5339,965.1,90756,2681,755.4,17.0,0.66
+505005,"Instituto Mexicano del Petroleo",government,"Mexico",5326,284.4,122617,2480,122.7,23.0,0.85
+505008,"Instituto Nacional de Cardiologia Ignacio Chavez",government,"Mexico",5291,460.0,144605,3419,223.8,27.3,1.11
+505026,"Centro de Investigaciones Biologicas Del Noroeste",government,"Mexico",5079,788.2,113938,1862,457.4,22.4,0.69
+704857,"Universidad Autonoma de Sinaloa",academic,"Mexico",4720,4944.4,181252,2459,5863.6,38.4,2.18
+505044,"International Maize and Wheat Improvement Center",other,"Mexico",4640,398.2,267341,1156,277.0,57.6,2.11
+505027,"Centro de Investigaciones en Optica",government,"Mexico",4396,150.0,68772,1199,208.5,15.6,0.69
+505025,"Centro de Investigacion en Alimentacion y Desarrollo",government,"Mexico",4356,2371.4,111788,1848,1904.5,25.7,0.84
+702731,"Universidad Iberoamericana (UIA)",academic,"Mexico",4167,3388.9,146539,1694,1423.5,35.2,1.90
+505036,"Instituto Nacional de Cancerologia - Mexico",government,"Mexico",4048,765.7,105397,2771,480.5,26.0,1.00
+505040,"Instituto Nacional de Neurologia y Neurocirugia",government,"Mexico",3943,657.1,115317,2454,392.2,29.2,1.03
+505049,"Universidad Autonoma de Zacatecas",academic,"Mexico",3877,1825.0,48012,2098,2300.0,12.4,0.64
+505032,"Hospital General de Mexico",medical,"Mexico",3876,326.2,92532,3364,218.2,23.9,0.89
+505047,"Universidad Autonoma Chapingo",academic,"Mexico",3792,2645.5,42870,2398,2373.3,11.3,0.52
+505055,"Universidad de las Americas Puebla",academic,"Mexico",3724,386.0,68797,1628,222.4,18.5,0.92
+505037,"Instituto Nacional de Enfermedades Respiratorias",government,"Mexico",3686,431.0,167271,2425,275.7,45.4,1.95
+505031,"Hospital de Especialidades",medical,"Mexico",3656,408.9,60767,3935,220.2,16.6,0.70
+505054,"Universidad de Colima",academic,"Mexico",3642,1892.3,89617,1950,1400.0,24.6,2.12
+505043,"Instituto Potosino de Investigacion Cientifica y Tecnologica",government,"Mexico",3629,-,106191,1198,-,29.3,1.06
+505033,"Hospital Infantil de Mexico Federico Gomez",medical,"Mexico",3576,648.4,71926,2358,317.6,20.1,0.85
+505041,"Instituto Nacional de Pediatria",government,"Mexico",3524,543.9,73684,2728,264.8,20.9,0.79
+713589,"Universidad Autónoma de Chihuahua",academic,"Mexico",3387,5728.6,46798,2251,5780.0,13.8,0.67
+702732,"Universidad Panamericana (UP)",academic,"Mexico",3331,11150.0,35260,1464,11766.7,10.6,0.73
+704861,"Universidad Autonoma de Coahuila",academic,"Mexico",3319,9040.0,58865,2222,10266.7,17.7,0.79
+505029,"Centro de Investigacion en Materiales Avanzados",government,"Mexico",3311,3866.7,59839,1263,4540.0,18.1,0.86
+505042,"Instituto Nacional de Psiquiatria Ramon de la Fuente",government,"Mexico",3291,203.0,248355,1540,108.9,75.5,3.37
+505030,"Colegio de la Frontera Sur",academic,"Mexico",3225,221.1,84245,1318,580.0,26.1,0.91
+706746,"Universidad Autonoma de Ciudad Juarez",academic,"Mexico",3173,25900.0,44421,1712,15000.0,14.0,0.75
+714293,"Universidad Autónoma de Tamaulipas",academic,"Mexico",3063,9266.7,38563,1883,14433.3,12.6,0.64
+505039,"Instituto Nacional de Investigaciones Nucleares",government,"Mexico",3029,119.6,47935,1207,25.8,15.8,0.61
+705961,"Universidad Juarez Autonoma de Tabasco",academic,"Mexico",3018,14050.0,36424,1932,20600.0,12.1,0.58
+703031,"Centro de Investigacion Cientifica de Yucatan",academic,"Mexico",2827,2200.0,66643,1457,1029.2,23.6,0.80
+704841,"Autonomous University of Aguascalientes",academic,"Mexico",2613,3583.3,29684,1517,4457.1,11.4,0.63
+714296,"Instituto Tecnológico de Tijuana",academic,"Mexico",2552,2750.0,44092,674,911.1,17.3,1.18
+702750,"Universidad Anáhuac",academic,"Mexico",2448,4900.0,28586,1645,6820.0,11.7,0.70
+715276,"Hospital General ""Dr. Manuel Gea González""",medical,"Mexico",2293,473.9,33543,1754,190.8,14.6,0.64
+703438,"Mexico Autonomous Institute of Technology",academic,"Mexico",2285,633.3,50529,780,319.0,22.1,1.93
+714299,"Universidad Autónoma de Guerrero",academic,"Mexico",2270,13450.0,31371,1406,9025.0,13.8,0.79
+704853,"Universidad Juarez del Estado de Durango",academic,"Mexico",2099,9400.0,31107,1244,12650.0,14.8,0.66
+704697,"Instituto Nacional de Perinatologia",government,"Mexico",2033,313.5,38634,1679,129.4,19.0,0.91
+703029,"Centro de Investigacion y Docencia Economicas",academic,"Mexico",1973,3600.0,42479,561,2533.3,21.5,1.38
+703028,"Center for Research in Applied Chemistry",academic,"Mexico",1968,681.0,36260,938,263.0,18.4,0.79
+717168,"Universidad Autonóma Agraria Antonio Narro",academic,"Mexico",1936,1518.2,27903,1203,1414.3,14.4,0.64
+704101,"El Colegio de Mexico, A.C.",academic,"Mexico",1896,1407.1,12349,877,1463.6,6.5,0.54
+707052,"Centro Nacional de Investigacion y Desarrollo Tecnologico, Mexico",academic,"Mexico",1834,566.7,33605,830,758.8,18.3,1.24
+715278,"Instituto Nacional de Rehabilitación",medical,"Mexico",1789,-,26605,1195,-,14.9,0.67
+703470,"Universidad de Monterrey",academic,"Mexico",1778,-,23336,1408,-,13.1,0.78
+714292,"Universidad Autónoma de Tlaxcala",academic,"Mexico",1761,1700.0,29917,886,1100.0,17.0,0.70
+707221,"Universidad Autonoma de Chiapas",academic,"Mexico",1745,13300.0,30818,1013,10900.0,17.7,0.88
+707723,"Instituto Nacional de Medicina Genomica",government,"Mexico",1741,-,75461,751,-,43.3,1.81
+713874,"Petróleos Mexicano",corporate,"Mexico",1700,156.3,13145,2164,78.0,7.7,0.56
+714290,"Instituto Tecnológico de Celaya",academic,"Mexico",1642,347.4,28705,839,478.9,17.5,0.73
+703030,"CIATEJ Guadalajara",academic,"Mexico",1581,9400.0,41344,809,5575.0,26.2,0.95
+714294,"Instituto Tecnológico de Sonora",academic,"Mexico",1544,15600.0,32484,932,22000.0,21.0,0.90
+713803,"Instituto Nacional de Antropología e Historia",academic,"Mexico",1544,1425.0,17649,1046,1477.8,11.4,0.77
+719713,"American British Cowdray Medical Center",medical,"Mexico",1511,534.8,27750,1502,286.8,18.4,0.90
+708454,"Universidad Autonoma de la Ciudad de Mexico",academic,"Mexico",1480,-,20541,640,-,13.9,0.67
+505035,"Instituto de Investigaciones Electricas",corporate,"Mexico",1480,-95.3,16962,901,-97.4,11.5,0.57
+717814,"Fundación Clínica Médica Sur",medical,"Mexico",1469,4600.0,42434,996,1300.0,28.9,1.41
+714714,"Universidad Autónoma de Baja California Sur",academic,"Mexico",1466,1137.5,23821,746,1200.0,16.2,0.63
+713817,"Universidad Autónoma de Nayarit",academic,"Mexico",1437,-,19450,933,-,13.5,0.59
+505057,"Universidad Popular Autonoma de Puebla",academic,"Mexico",1366,3200.0,11321,943,2371.4,8.3,0.50
+713806,"Universidad Autónoma de Campeche",academic,"Mexico",1341,857.1,21362,711,946.7,15.9,0.65
+717488,"El Colegio de la Frontera Sur",academic,"Mexico",1214,2266.7,28832,603,1012.5,23.7,0.88
+715277,"Hospital Juárez de México",medical,"Mexico",1147,1416.7,15549,1113,771.4,13.6,0.70
+703032,"Centro de Investigacion y Desarrollo Tecnologico en Electroquimica",academic,"Mexico",1136,2966.7,22855,517,3100.0,20.1,0.88
+717758,"Centro de Investigación Biomédica de Occidente",academic,"Mexico",1125,900.0,20433,721,447.4,18.2,0.62
+717993,"Instituto Tecnológico de Morelia",academic,"Mexico",1119,2000.0,12372,680,1357.1,11.1,0.56
+705325,"Universidad La Salle",academic,"Mexico",1111,3000.0,10219,1140,3950.0,9.2,0.52
+714291,"Instituto Tecnológico de Veracruz",academic,"Mexico",1026,313.3,25160,619,541.7,24.5,0.79
+714297,"El Colegio de la Frontera Norte A.C.",academic,"Mexico",969,2300.0,10465,352,2033.3,10.8,0.70
+720866,"SSA Mexico",corporate,"Mexico",963,-26.1,19440,1591,-30.0,20.2,0.55
+717540,"Universidad Tecnológica de la Mixteca",academic,"Mexico",910,4700.0,9151,526,7000.0,10.1,0.64
+724790,"Universidad de Ciencias y Artes de Chiapas",academic,"Mexico",877,-,10925,549,-,12.5,0.64
+715593,"Universidad Autónoma del Carmen",academic,"Mexico",859,-,9973,502,-,11.6,0.57
+719872,"Instituto Tecnológico y de Estudios Superiores de Occidente",academic,"Mexico",841,6600.0,11279,451,6100.0,13.4,0.76
+704835,"Universidad Autonoma de Guadalajara",academic,"Mexico",832,820.0,13133,658,1466.7,15.8,0.68
+714711,"Instituto Nacional de Geriatría",other,"Mexico",808,-,25881,304,-,32.0,1.44
+715579,"Universidad del Mar",academic,"Mexico",777,5700.0,9058,430,6700.0,11.7,0.49
+714043,"Universidad del Valle de México",academic,"Mexico",777,8800.0,11847,578,8600.0,15.2,0.70
+714705,"Centro de Ingeniería y Desarrollo Industrial",other,"Mexico",766,-,11187,425,-,14.6,0.71
+714708,"Instituto Tecnológico de Toluca",academic,"Mexico",720,1750.0,9272,506,1375.0,12.9,0.49
+713942,"Universidad de Quintana Roo",academic,"Mexico",700,-,11287,321,-,16.1,0.70
+717999,"Instituto Tecnológico de Aguascalientes",academic,"Mexico",677,-,17588,264,-,26.0,1.28
+707222,"Universidad Autonoma Benito Juarez de Oaxaca",academic,"Mexico",674,-,8394,481,-,12.5,0.66
+719172,"Centro de Investigaciones y Estudios Superiores en Antropología Social",academic,"Mexico",616,1800.0,6216,283,1500.0,10.1,0.90
+718000,"Instituto Tecnológico de Ciudad Madero",academic,"Mexico",609,1300.0,6881,459,675.0,11.3,0.68
+714298,"Universidad del Papaloapan",academic,"Mexico",522,-,7202,319,-,13.8,0.54
+717994,"Instituto Tecnológico de Orizaba",academic,"Mexico",521,-,7872,338,-,15.1,0.83
+717992,"Instituto Tecnológico de La Laguna",academic,"Mexico",501,550.0,8035,232,1433.3,16.0,0.82
+714709,"Centro de Investigación en Geografía y Geomática ""Ing. Jorge L. Tamayo"" A.C.",other,"Mexico",457,-,4532,212,-,9.9,0.72
+720032,"Comisión Federal de Electricidad",government,"Mexico",438,-54.5,2473,410,-60.0,5.6,0.45
+718005,"Instituto Tecnológico de Tepic",academic,"Mexico",436,-,9760,227,-,22.4,0.96
+705525,"Secretariat of Public Education",government,"Mexico",405,-,6949,341,-,17.2,0.74
+720147,"Centro de Innovación Aplicada en Tecnologias Competitivas",academic,"Mexico",402,-,5955,196,-,14.8,0.68
+719171,"FLACSO México",academic,"Mexico",380,2100.0,4924,195,1700.0,13.0,0.77
+705509,"CETYS Universidad",academic,"Mexico",380,4000.0,3650,281,5100.0,9.6,0.68
+709584,"Banco de Mexico",government,"Mexico",375,2800.0,6430,238,1400.0,17.1,0.99
+711474,"Nemak",corporate,"Mexico",355,-,5743,140,-,16.2,0.69
+714706,"Instituto Tecnológico Superior de Irapuato",academic,"Mexico",317,-,3539,160,-,11.2,0.92
+712514,"Instituto Nacional de Pesca y Acuacultura",academic,"Mexico",314,-85.7,8035,206,-90.0,25.6,0.65
+717995,"Instituto Tecnológico de Saltillo",academic,"Mexico",307,150.0,8395,180,42.9,27.3,0.70
+717991,"Instituto Tecnológico de Chihuahua",academic,"Mexico",303,400.0,3170,242,250.0,10.5,0.61
+708661,"Instituto Tecnológico de Mérida",academic,"Mexico",285,-,4591,193,-,16.1,0.57
+704514,"Centro de Hematologia y Medicina Interna",medical,"Mexico",283,85.7,3566,143,154.5,12.6,0.61
+718007,"Instituto Tecnológico de Zacatepec",academic,"Mexico",234,300.0,4009,134,550.0,17.1,0.63
+720772,"Secretaría de Finanzas del Distrito Federal",government,"Mexico",233,-,3524,322,-,15.1,0.78
+717998,"Instituto Tecnológico de Conkal",academic,"Mexico",232,-,2786,193,-,12.0,0.50
+718004,"Instituto Tecnológico de Querétaro",academic,"Mexico",220,-,3163,129,-,14.4,0.61
+720776,"Academia Mexicana de Cirugía",medical,"Mexico",214,0.0,454,104,-33.3,2.1,0.10
+721103,"Hospital Regional de Alta Especialidad Ixtapaluca",medical,"Mexico",188,-,1944,148,-,10.3,0.79
+718041,"Universidad Politécnica de Puebla",academic,"Mexico",188,-,1448,137,-,7.7,0.54
+721104,"Hospital Psiquiatrico Infantil Dr. Juan N Navarro",medical,"Mexico",184,-,2035,137,-,11.1,0.53
+720288,"Universidad Politécnica de Tulancingo",academic,"Mexico",167,-,1195,111,-,7.2,0.44
+721289,"Hospital General Dr. Miguel Silva",medical,"Mexico",165,125.0,2564,166,150.0,15.5,0.57
+718002,"Instituto Tecnológico de León",academic,"Mexico",160,400.0,1099,111,500.0,6.9,0.55
+718006,"Instituto Tecnológico de Tlajomulco",academic,"Mexico",131,-,1505,80,-,11.5,0.49
+718414,"Universidad del Caribe",academic,"Mexico",126,-,841,84,-,6.7,0.44
+718197,"Universidad Autónoma de Occidente",academic,"Mexico",126,-,1785,93,0.0,14.2,0.61
+721291,"Hospital Regional de Alta Especialidad de Oaxaca",medical,"Mexico",118,-,1522,88,-,12.9,0.79
+718649,"Universidad de Montemorelos",academic,"Mexico",108,-,1023,125,-,9.5,0.67
+720761,"Colegio Mexicano de Anestesiologia",academic,"Mexico",92,-,130,36,-,1.4,0.12
+720189,"Laboratorio Nacional de Informática Avanzada",academic,"Mexico",75,-,6223,49,-,83.0,1.82
+721290,"Hospital Psiquiátrico Fray Bernardino Álvarez",medical,"Mexico",74,300.0,1020,78,60.0,13.8,0.42
+718001,"Instituto Tecnológico de La Paz",academic,"Mexico",74,-,817,55,-,11.0,0.64
+718009,"Instituto Tecnológico Superior de Tierra Blanca",academic,"Mexico",58,-,977,36,-,16.8,0.77
+718008,"Instituto Tecnológico Superior de Cajeme",academic,"Mexico",53,-,640,38,-,12.1,0.57
+717996,"Instituto Tecnológico de Tizimín",academic,"Mexico",52,-,583,34,-,11.2,0.68
+718058,"Peñoles",corporate,"Mexico",51,300.0,1027,40,200.0,20.1,0.64
+724929,"Universidad Regiomontana",academic,"Mexico",43,-,265,31,-,6.2,0.50
+705510,"Universidad de Celaya",academic,"Mexico",34,-,705,39,-,20.7,0.90
+717997,"Instituto Tecnológico del Valle del Yaqui",academic,"Mexico",30,-,449,18,-,15.0,0.70
+718003,"Instituto Tecnológico de Minatitlán",academic,"Mexico",23,-,309,25,-,13.4,0.42
+719307,"Universidad Tecmilenio",academic,"Mexico",22,-,110,19,-,5.0,0.58
+718010,"Instituto Tecnológico Superior de Uruapan",academic,"Mexico",22,-,320,18,-,14.5,0.63
+718011,"Instituto Tecnológico Superior de Zapopan",academic,"Mexico",11,-,174,6,0.0,15.8,0.53
+719127,"Instituto Tecnológico de la Costa Grande",academic,"Mexico",2,-,93,2,0.0,46.5,2.09
+
+"© 2026 Elsevier B.V. All rights reserved. SciVal, RELX Group and the RE symbol are trade marks of RELX Intellectual Properties SA, used under license."
