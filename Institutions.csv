@@ -1,16 +1,4 @@
-﻿Data set,Institutions
-Entity,"Mexico"
-Year range,1996 to 2024
-Subject classification,"ASJC"
-Filtered by,"not filtered"
-Types of publications included,all publication types
-Self-citations,included
-
-Data source,Scopus
-Date last updated,13 May 2026
-Date exported,18 May 2026
-
-Institution ID,Institution,Sector,Country/Region,Scholarly Output,Scholarly Output (growth %),Citations,Authors,Authors (growth %),Citations per Publication,Field-Weighted Citation Impact
+﻿Institution ID,Institution,Sector,Country/Region,Scholarly Output,Scholarly Output (growth %),Citations,Authors,Authors (growth %),Citations per Publication,Field-Weighted Citation Impact
 505023,"Universidad Nacional Autónoma de México",academic,"Mexico",136634,428.4,3236874,61863,392.1,23.7,0.92
 505011,"Instituto Politécnico Nacional",academic,"Mexico",47500,1319.6,804490,24849,1021.7,16.9,0.74
 505002,"Centro de Investigacion y de Estudios Avanzados del Instituto Politécnico Nacional",government,"Mexico",40634,305.7,1034293,15594,188.3,25.5,1.05

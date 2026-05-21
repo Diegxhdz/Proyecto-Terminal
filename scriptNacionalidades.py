@@ -17,6 +17,8 @@ La primer tarea será realizar un script en python que realice la clasificación
 """
 
 def solo_uam(instituciones):
+    if pd.isna(instituciones):
+        return False
     instituciones_list = [inst.strip() for inst in instituciones.split('|')]
     for inst in instituciones_list:
         if 'Universidad Autónoma Metropolitana' not in inst:
@@ -25,9 +27,13 @@ def solo_uam(instituciones):
 
 
 def contar_instituciones_nacionales(instituciones):
-  
-    df = pd.read_csv("Institutions.csv")
-
+    if pd.isna(instituciones):
+        return 0
+    try:
+        df = pd.read_csv("Institutions.csv")
+    except Exception as e:
+        print(f"Error al leer el archivo Institutions.csv: {e}")
+        return 0
     instituciones_list = [inst.strip() for inst in instituciones.split('|')]
     instituciones_nacionales = set()
 
@@ -41,10 +47,13 @@ def contar_instituciones_nacionales(instituciones):
 
 def clasificar_nacionalidades(info_publicacion):
 
-    if info_publicacion['Number of Authors'] == 1:
-        return "Personal", 1
+    if pd.isna(info_publicacion['Institutions']):
+        return "Sin información", 0
     
-    elif info_publicacion['Number of Countries/Regions'] == 1 and 'Mexico' in info_publicacion['Country / Regions']:
+    if info_publicacion['Number of Authors'] == 1:
+        return "Personal", contar_instituciones_nacionales(info_publicacion['Institutions'])
+    
+    elif info_publicacion['Number of Countries/Regions'] == 1 and pd.notna(info_publicacion['Country/Region']) and 'Mexico' in info_publicacion['Country/Region']:
         if solo_uam(info_publicacion['Institutions']):
             return "UAM", 1
         return "Nacional", contar_instituciones_nacionales(info_publicacion['Institutions'])
@@ -52,7 +61,8 @@ def clasificar_nacionalidades(info_publicacion):
     elif info_publicacion['Number of Countries/Regions'] > 1:
         return "Internacional", contar_instituciones_nacionales(info_publicacion['Institutions'])
 
-    return 
+    # Caso por defecto para filas que no cumplen ninguna condición
+    return "Sin clasificar", contar_instituciones_nacionales(info_publicacion['Institutions']) 
 
 
 
@@ -80,7 +90,7 @@ def procesar_csv(csv_path):
     return df
 
 if __name__ == "__main__":
-    csv_path = Path("instituciones.csv")
+    csv_path = Path("institucionesCompletas.csv")
     df_resultado = procesar_csv(csv_path)
     if df_resultado is not None:
         df_resultado.to_csv("publicaciones_clasificadas.csv", index=False)
