@@ -90,7 +90,7 @@ def procesar_csv(csv_path):
     return df
 
 if __name__ == "__main__":
-    csv_path = Path("institucionesCompletas.csv")
+    csv_path = Path("Publications_at_Universidad_Aut_noma_Metropolitana_2015_-_2024.csv")
     df_resultado = procesar_csv(csv_path)
     if df_resultado is not None:
         df_resultado.to_csv("publicaciones_clasificadas.csv", index=False)
