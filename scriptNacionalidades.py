@@ -27,6 +27,7 @@ def solo_uam(instituciones):
 
 
 def contar_instituciones_nacionales(instituciones):
+    #Permite evitar errores con renglones vacios o con información faltante
     if pd.isna(instituciones):
         return 0
     try:
@@ -61,8 +62,6 @@ def clasificar_nacionalidades(info_publicacion):
     elif info_publicacion['Number of Countries/Regions'] > 1:
         return "Internacional", contar_instituciones_nacionales(info_publicacion['Institutions'])
 
-    # Caso por defecto para filas que no cumplen ninguna condición
-    return "Sin clasificar", contar_instituciones_nacionales(info_publicacion['Institutions']) 
 
 
 

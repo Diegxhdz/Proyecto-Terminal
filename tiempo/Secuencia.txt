@@ -1,0 +1,13 @@
+done 1.  Crear una lista con los autores de la UAM a partir del archivo CSV de autores.
+donde 2.  Leer el archivo CSV de publicaciones y verificar si alguno de los autores de cada 
+done publicación pertenece a la lista de autores de la UAM.
+3.  Si pertenece, guardar este autor en alguna estructura de datos (como un nuevo DataFrame)
+ para luego exportarlo a un nuevo archivo CSV, con los datos de esa publicacion.
+ Especialmente se puede guardar el título de la publicación, el año, las citas, el id, etc. para
+4.  Como un autor puede aparecer en varias publicaciones, se debe asegurar que cada autor 
+se guarde solo una vez en el nuevo archivo CSV, pero también 
+se puede incluir información adicional como el número de publicaciones en las que 
+aparece o los títulos de esas publicaciones, year citas, id etc.
+5. una vez que se tenga la lista de autores de la UAM con sus respectivas
+ publicaciones, se puede exportar esta información a un nuevo archivo CSV para su 
+ posterior análisis o uso.
