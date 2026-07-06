@@ -4,6 +4,20 @@ from pathlib import Path
 from collections import defaultdict
 
 
+def _canonical_base(author_id):
+    """Return a canonical base form for an author id: strip 'au' prefix, .0, spaces and lower."""
+    if author_id is None or (isinstance(author_id, float) and pd.isna(author_id)):
+        return None
+    s = str(author_id).strip()
+    if s.endswith('.0'):
+        s = s[:-2]
+    s = s.replace(' ', '')
+    s = s.lower()
+    if s.startswith('au'):
+        s = s[2:]
+    return s
+
+
 def procesar_autores(excel_path):
     """
     Lee un archivo Excel y retorna un set con todos los autores únicos.
@@ -14,7 +28,12 @@ def procesar_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return set()
 
-    conjunto_autores = set(df['Scopus author ID'].unique())
+    # Normalize author IDs to a canonical base form (e.g. 'au123' -> '123', 123.0 -> '123')
+    conjunto_autores = set()
+    for raw in df['Scopus author ID'].unique():
+        base = _canonical_base(raw)
+        if base:
+            conjunto_autores.add(base)
     print(f"Cargando archivo de entrada: {excel_path}")
     return conjunto_autores
 
@@ -29,7 +48,12 @@ def diccionario_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return {}
 
-    diccionario_autores = dict(zip(df['Scopus author ID'], df['Name']))
+    # Map canonical base id -> Name
+    diccionario_autores = {}
+    for raw_id, name in zip(df['Scopus author ID'], df['Name']):
+        base = _canonical_base(raw_id)
+        if base:
+            diccionario_autores[base] = name
     print(f"Cargando archivo de entrada: {excel_path}")
     return diccionario_autores
 
@@ -45,26 +69,43 @@ def buscar_autor(csv_path_publicaciones, conjunto_autores):
 
     print(f"\nBuscando autores de la UAM ({len(conjunto_autores)} autores) en {len(df)} publicaciones...")
 
-    for autor_uam in conjunto_autores:
-        for _, row in df.iterrows():
-            if pd.isna(row.get('Scopus Author Ids')):
+    for _, row in df.iterrows():
+        print("progreso {}/{}".format(_, len(df)), end='\r')
+        scopus_ids = row.get('Scopus Author Ids')
+        if pd.isna(scopus_ids):
+            continue
+
+        autores_fila = str(scopus_ids)
+        # Split by pipe and also accept other common separators
+        autores_list = re.split(r"\||;|,", autores_fila)
+        # Build canonical base set for the authors in this publication
+        row_bases = set()
+        for autor in autores_list:
+            a = autor.strip()
+            if not a:
                 continue
+            base = _canonical_base(a)
+            if base:
+                row_bases.add(base)
 
-            autores_fila = str(row['Scopus Author Ids'])
-            autores_list = [autor.strip() for autor in autores_fila.split('|') if autor.strip()]
+        # Find intersection with known UAM authors
+        matched = row_bases & conjunto_autores
+        if not matched:
+            continue
 
-            if autor_uam in autores_list:
-                publicacion = dict(row.to_dict())
-                publicacion.update({
-                    'Año': row.get('Year', 'N/A'),
-                    'Citas': row.get('Citations', 'N/A'),
-                    'Colaboracion': row.get('Colaboracion', 'N/A'),
-                    'Autores': row.get('Authors', 'N/A'),
-                    'Instituciones': row.get('Institutions', 'N/A'),
-                    'Regiones': row.get('Country/Region', 'N/A'),
-                    'Instituciones_Nacionales': row.get('Number of national institutions', 0)
-                })
-                autores_publicaciones[autor_uam].append(publicacion)
+        publicacion = dict(row.to_dict())
+        publicacion.update({
+            'Año': row.get('Year', 'N/A'),
+            'Citas': row.get('Citations', 'N/A'),
+            'Colaboracion': row.get('Colaboracion', 'N/A'),
+            'Autores': row.get('Authors', 'N/A'),
+            'Instituciones': row.get('Institutions', 'N/A'),
+            'Regiones': row.get('Country/Region', 'N/A'),
+            'Instituciones_Nacionales': row.get('Number of national institutions', 0)
+        })
+
+        for base in matched:
+            autores_publicaciones[base].append(publicacion)
 
     return autores_publicaciones
 
@@ -77,15 +118,17 @@ def obtener_id_autor(autor, diccionario_autores=None):
     if autor is None or pd.isna(autor):
         return None
 
-    autor_str = str(autor).strip()
-    if autor_str in diccionario_autores:
-        return autor_str
+    base = _canonical_base(autor)
+    if base in diccionario_autores:
+        return base
 
+    # Try matching by name
+    autor_str = str(autor).strip()
     for autor_id, nombre in diccionario_autores.items():
         if str(nombre).strip() == autor_str:
-            return str(autor_id).strip()
+            return autor_id
 
-    return autor_str
+    return base
 
 def exportar_publicaciones_por_autor(autores_publicaciones, diccionario_autores=None, output_folder='.'):
     output_folder = Path(output_folder)
