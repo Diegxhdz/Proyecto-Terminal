@@ -13,7 +13,7 @@ def procesar_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return set()
 
-    conjunto_autores = set(df['Name'].unique())
+    conjunto_autores = set(df['Scopus author ID'].unique())
     print(f"Cargando archivo de entrada: {excel_path}")
     return conjunto_autores
 
@@ -28,7 +28,7 @@ def diccionario_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return {}
 
-    diccionario_autores = dict(zip(df['Name'], df['Scopus author ID']))
+    diccionario_autores = dict(zip(df['Scopus author ID'], df['Name']))
     print(f"Cargando archivo de entrada: {excel_path}")
     return diccionario_autores
 
@@ -111,10 +111,18 @@ def calcular_productividad_anual_por_autor(autores_publicaciones):
 def obtener_id_autor(autor, diccionario_autores=None):
     if not diccionario_autores:
         return None
-    autor_id = diccionario_autores.get(autor)
-    if pd.isna(autor_id):
+    if autor is None or pd.isna(autor):
         return None
-    return str(int(autor_id)) if isinstance(autor_id, (int, float)) and not pd.isna(autor_id) else str(autor_id).strip()
+
+    autor_str = str(autor).strip()
+    if autor_str in diccionario_autores:
+        return autor_str
+
+    for autor_id, nombre in diccionario_autores.items():
+        if str(nombre).strip() == autor_str:
+            return str(autor_id).strip()
+
+    return autor_str
 
 
 def exportar_productividad_por_autor_individual(autores_publicaciones, diccionario_autores=None, output_folder='.'):
@@ -123,11 +131,15 @@ def exportar_productividad_por_autor_individual(autores_publicaciones, diccionar
 
     for autor, publicaciones in autores_publicaciones.items():
         autor_id = obtener_id_autor(autor, diccionario_autores)
-        if autor_id:
-            filename = f'productividad_au{autor_id}.csv'
+        filename = f'productividad_au{autor_id}.csv' if autor_id else f'productividad_{autor}.csv'
         output_path = output_folder / filename
         df_autor = calcular_productividad_anual_por_autor({autor: publicaciones})
         df_autor = df_autor.sort_values(['Autor', 'Año'])
+
+        if 'Autor_ID' not in df_autor.columns and autor_id:
+            autor_col_idx = df_autor.columns.get_loc('Autor') + 1
+            df_autor.insert(autor_col_idx, 'Autor_ID', autor_id)
+
         df_autor.to_csv(output_path, index=False, encoding='utf-8')
 
     return True
@@ -152,7 +164,9 @@ def generar_productividad_desde_archivos(input_folder, output_folder, excel_path
             continue
 
         autor = None
-        if 'Autor' in df_publicaciones.columns and not df_publicaciones['Autor'].dropna().empty:
+        if 'Autor_ID' in df_publicaciones.columns and not df_publicaciones['Autor_ID'].dropna().empty:
+            autor = str(df_publicaciones['Autor_ID'].dropna().iloc[0])
+        elif 'Autor' in df_publicaciones.columns and not df_publicaciones['Autor'].dropna().empty:
             autor = str(df_publicaciones['Autor'].dropna().iloc[0])
         else:
             autor = archivo.stem.replace('articulos_', '').strip()
@@ -166,7 +180,8 @@ def generar_productividad_desde_archivos(input_folder, output_folder, excel_path
                 'Autores': row.get('Autores', row.get('Authors', 'N/A')),
                 'Instituciones': row.get('Instituciones', row.get('Institutions', 'N/A')),
                 'Regiones': row.get('Regiones', row.get('Country/Region', 'N/A')),
-                'Instituciones_Nacionales': row.get('Instituciones_Nacionales', row.get('Number of national institutions', 0))
+                'Instituciones_Nacionales': row.get('Instituciones_Nacionales', row.get('Number of national institutions', 0)),
+                'Autor_ID': row.get('Autor_ID', row.get('Author ID', 'N/A'))
             })
             autores_publicaciones[autor].append(publicacion)
 

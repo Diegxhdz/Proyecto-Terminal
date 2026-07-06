@@ -1,4 +1,4 @@
-import pandas as pd
+﻿import pandas as pd
 import re
 from pathlib import Path
 from collections import defaultdict
@@ -14,7 +14,7 @@ def procesar_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return set()
 
-    conjunto_autores = set(df['Name'].unique())
+    conjunto_autores = set(df['Scopus author ID'].unique())
     print(f"Cargando archivo de entrada: {excel_path}")
     return conjunto_autores
 
@@ -29,7 +29,7 @@ def diccionario_autores(excel_path):
         print(f"Error al leer el archivo Excel: {e}")
         return {}
 
-    diccionario_autores = dict(zip(df['Name'], df['Scopus author ID']))
+    diccionario_autores = dict(zip(df['Scopus author ID'], df['Name']))
     print(f"Cargando archivo de entrada: {excel_path}")
     return diccionario_autores
 
@@ -47,10 +47,10 @@ def buscar_autor(csv_path_publicaciones, conjunto_autores):
 
     for autor_uam in conjunto_autores:
         for _, row in df.iterrows():
-            if pd.isna(row.get('Authors')):
+            if pd.isna(row.get('Scopus Author Ids')):
                 continue
 
-            autores_fila = str(row['Authors'])
+            autores_fila = str(row['Scopus Author Ids'])
             autores_list = [autor.strip() for autor in autores_fila.split('|') if autor.strip()]
 
             if autor_uam in autores_list:
@@ -74,10 +74,18 @@ def buscar_autor(csv_path_publicaciones, conjunto_autores):
 def obtener_id_autor(autor, diccionario_autores=None):
     if not diccionario_autores:
         return None
-    autor_id = diccionario_autores.get(autor)
-    if pd.isna(autor_id):
+    if autor is None or pd.isna(autor):
         return None
-    return str(int(autor_id)) if isinstance(autor_id, (int, float)) and not pd.isna(autor_id) else str(autor_id).strip()
+
+    autor_str = str(autor).strip()
+    if autor_str in diccionario_autores:
+        return autor_str
+
+    for autor_id, nombre in diccionario_autores.items():
+        if str(nombre).strip() == autor_str:
+            return str(autor_id).strip()
+
+    return autor_str
 
 def exportar_publicaciones_por_autor(autores_publicaciones, diccionario_autores=None, output_folder='.'):
     output_folder = Path(output_folder)
@@ -91,6 +99,9 @@ def exportar_publicaciones_por_autor(autores_publicaciones, diccionario_autores=
         df_autor = pd.DataFrame(publicaciones)
         if 'Autor' not in df_autor.columns:
             df_autor.insert(0, 'Autor', autor)
+        if 'Autor_ID' not in df_autor.columns:
+            autor_col_idx = df_autor.columns.get_loc('Autor') + 1
+            df_autor.insert(autor_col_idx, 'Autor_ID', autor)
         df_autor.to_csv(output_path, index=False, encoding='utf-8')
 
     return True
@@ -110,5 +121,3 @@ if __name__ == '__main__':
     exportar_publicaciones_por_autor(autores_publicaciones, dic_autores, output_dir_publicaciones)
     print('Exportación de publicaciones completa.')
   
-
-
